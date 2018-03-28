@@ -2,22 +2,22 @@
  * Description: 2D Platformer GamePanel class
  * Author: Humberto Colin
  */
-package Main;
+package com.main;
 
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 
-import GameState.GameStateManager;
+import com.gamestate.GameStateManager;
 
 public class GamePanel extends JPanel implements Runnable, KeyListener {
 	
 	//dimensions
-	public static final int WIDTH = 320;
-	public static final int HEIGHT = 240;
+	public static final int WIDTH = 640;
+	public static final int HEIGHT = 480;
 	// Final size is 640x480
-	public static final int SCALE = 2; 
+	public static final int SCALE = 1; 
 	
 	//game thread
 	
@@ -76,7 +76,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 			drawToScreen();
 			elapsed= System.nanoTime()-start;
 			
-			wait = targetTime-elapsed/1000000;
+			wait = targetTime-elapsed/10000000;
 			
 			try {
 				Thread.sleep(wait);

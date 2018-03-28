@@ -1,10 +1,10 @@
-package TileMap;
+package com.maps;
 
 import java.awt.Graphics2D;
 import java.awt.image.*;
 import javax.imageio.*;
 
-import Main.GamePanel;
+import com.main.GamePanel;
 
 public class Background {
 	private BufferedImage image;
@@ -14,12 +14,12 @@ public class Background {
 	private double dx;
 	private double dy;
 	
-	//private double moveScale;
+	private double moveScale;
 	
-	public Background(String s) { //(String s,double ms) for moving
+	public Background(String s, double ms) { //(String s,double ms) for moving
 		try {
 			image = ImageIO.read(getClass().getResourceAsStream(s));//loads images from resource folder
-			//moveScale = ms;
+			moveScale = ms;
 		}
 		catch(Exception e) {
 			e.printStackTrace();
@@ -27,17 +27,17 @@ public class Background {
 	}
 	
 	public void setPosition(double x, double y) {
-		/*this.x = (x * moveScale) % GamePanel.WIDTH;
-		this.y = (y * moveScale) % GamePanel.HEIGHT;*/
-		this.x =x;
-		this.y=y;
+		this.x = (x * moveScale) % GamePanel.WIDTH;
+		this.y = (y * moveScale) % GamePanel.HEIGHT;
+		//this.x =x;
+		//this.y=y;
 	}
 	
 	//allows the background to automatically scroll
-/*	public void setVector(double dx, double dy) {
+	public void setVector(double dx, double dy) {
 		this.dx = dx;
 		this.dy = dy;
-	}*/
+	}
 	
 	public void update() {
 		x += dx;

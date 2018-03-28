@@ -1,8 +1,10 @@
-package GameState;
+package com.gamestate;
 
-import TileMap.Background;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+
+import com.main.GamePanel;
+import com.maps.Background;
 
 public class MenuState extends GameState{
 	
@@ -23,14 +25,14 @@ public class MenuState extends GameState{
 		this.gsm=gsm;
 		
 		try {
-			bg = new Background("/Backgrounds/menuBG.gif");
-			//bg.setVector(-0.1, 0);
-			bg.setPosition(-0.1, 0);
+			bg = new Background("/Backgrounds/menuBG.gif",1);
+			bg.setVector(-1, 0);//sets the speed of scrolling image
+			//bg.setPosition(-0.1, 0);
 			
 			titleColor = new Color(255,0,0);
 			titleFont = new Font("Century Gothic", Font.BOLD,28);
 			
-			font = new Font("Arial", Font.PLAIN,12);
+			font = new Font("Arial", Font.BOLD,18);
 		}
 		catch(Exception e){
 			e.printStackTrace();
@@ -46,7 +48,7 @@ public class MenuState extends GameState{
 		bg.draw(g);
 		g.setColor(titleColor);
 		g.setFont(titleFont);
-		g.drawString("Platformer2D EX", 80, 70);
+		g.drawString("Platformer2D EX", 220,160);
 		
 		//menu options
 		g.setFont(font);
@@ -57,7 +59,7 @@ public class MenuState extends GameState{
 			else {
 				g.setColor(Color.black);
 			}
-			g.drawString(options[i], 145,140+i*15);
+			g.drawString(options[i], 315,205+i*15);
 		}
 		
 	}
