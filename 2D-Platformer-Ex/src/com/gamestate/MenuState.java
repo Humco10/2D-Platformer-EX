@@ -25,14 +25,14 @@ public class MenuState extends GameState{
 		this.gsm=gsm;
 		
 		try {
-			bg = new Background("/Backgrounds/menuBG.gif",1);
-			bg.setVector(-1, 0);//sets the speed of scrolling image
+			bg = new Background("/Backgrounds/menuBG3.jpg",1);
+			bg.setVector(1, 0);//sets the speed of scrolling image
 			//bg.setPosition(-0.1, 0);
 			
 			titleColor = new Color(255,0,0);
-			titleFont = new Font("Century Gothic", Font.BOLD,28);
+			titleFont = new Font("Century Gothic", Font.BOLD,38);
 			
-			font = new Font("Arial", Font.BOLD,18);
+			font = new Font("Arial", Font.BOLD,28);
 		}
 		catch(Exception e){
 			e.printStackTrace();
@@ -48,7 +48,7 @@ public class MenuState extends GameState{
 		bg.draw(g);
 		g.setColor(titleColor);
 		g.setFont(titleFont);
-		g.drawString("Platformer2D EX", 220,160);
+		g.drawString("Platformer2D EX", 830,320);//220,160 for 640x480
 		
 		//menu options
 		g.setFont(font);
@@ -59,7 +59,7 @@ public class MenuState extends GameState{
 			else {
 				g.setColor(Color.black);
 			}
-			g.drawString(options[i], 315,205+i*15);
+			g.drawString(options[i], 940,440+i*24);//315,205 for 640x480 and i*15
 		}
 		
 	}

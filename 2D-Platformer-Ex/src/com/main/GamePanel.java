@@ -14,8 +14,8 @@ import com.gamestate.GameStateManager;
 public class GamePanel extends JPanel implements Runnable, KeyListener {
 	
 	//dimensions
-	public static final int WIDTH = 640;
-	public static final int HEIGHT = 480;
+	public static final int WIDTH = 1920;//640.....1920
+	public static final int HEIGHT = 1080;//480.....1080
 	// Final size is 640x480
 	public static final int SCALE = 1; 
 	
@@ -35,7 +35,6 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 	
 	
 	public GamePanel() {
-		super();
 		setPreferredSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
 		setFocusable(true);
 		requestFocus();

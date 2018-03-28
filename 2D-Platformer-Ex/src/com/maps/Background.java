@@ -42,6 +42,8 @@ public class Background {
 	public void update() {
 		x += dx;
 		y += dy;
+		setPosition(x,y);
+		
 	}
 public void draw(Graphics2D g){
 		g.drawImage(image, (int)x, (int)y, null);
